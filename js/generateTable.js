@@ -104,3 +104,39 @@ for (let i = 0; i < accountSorted.length; i++) {
 
     tableCellBallance.appendChild(ballance);
 }
+
+// Generate table footer values
+
+// Append total income value
+
+var totalIncome = 0;
+
+for (let i = 0; i < account.length; i++) {
+
+    if (account[i].income == null) {
+        totalIncome += 0;
+    } else {
+        totalIncome += account[i].income;
+    }
+}
+
+document.getElementById("total-income").innerHTML = totalIncome;
+
+// Append total expense value 
+
+var totalExpense = 0;
+
+for (let i = 0; i < account.length; i++) {
+
+    if (account[i].expense == null) {
+        totalExpense += 0;
+    } else {
+        totalExpense += account[i].expense;
+    }
+}
+
+document.getElementById("total-expense").innerHTML = totalExpense;
+
+// Append final ballance value
+
+document.getElementById("final-ballance").innerHTML = totalIncome - totalExpense;
